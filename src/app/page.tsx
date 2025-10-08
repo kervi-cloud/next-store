@@ -1,13 +1,11 @@
 import { revalidatePath } from 'next/cache'
-import { neon } from '@neondatabase/serverless'
-const sql = neon(`${process.env.DATABASE_URL}`)
 
 export default async function Page() {
-  const result = await sql('SELECT * FROM users')
   async function createAction(formData: FormData) {
     'use server'
     const username = formData.get('username')
     const password = formData.get('password')
+    console.log(username, password);
     // await sql('INSERT INTO users (username, password) VALUES ($1, $2)', [username, password])
     revalidatePath('/')
   }
