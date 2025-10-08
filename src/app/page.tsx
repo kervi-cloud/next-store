@@ -8,7 +8,7 @@ export default async function Page() {
     'use server'
     const username = formData.get('username')
     const password = formData.get('password')
-    await sql('INSERT INTO users (username, password) VALUES ($1, $2)', [username, password])
+    // await sql('INSERT INTO users (username, password) VALUES ($1, $2)', [username, password])
     revalidatePath('/')
   }
   return (
@@ -25,9 +25,9 @@ export default async function Page() {
           <button type="submit">注册</button>
         </form>
       </div>
-      <ul>
+      {/* <ul>
         { result.map(item => <li key={item.id}>{item.username}, {item.password}</li>) }
-      </ul>
+      </ul> */}
     </div>
   )
 }
