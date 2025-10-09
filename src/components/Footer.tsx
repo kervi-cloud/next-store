@@ -12,7 +12,7 @@ const Footer = () => {
         </div>
         <div className='flex gap-10'>
           {NavList.map((item, i) => {
-            return <>
+            return <Fragment key={item.title}>
               {i !== 0 && <Separator orientation="vertical" />}
               <div>
                 <span>{item.title}</span>
@@ -22,7 +22,7 @@ const Footer = () => {
                   })}
                 </ul>
               </div>
-            </>
+            </Fragment>
           })}
         </div>
       </div>
